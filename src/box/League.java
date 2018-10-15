@@ -23,13 +23,23 @@ public class League {
     team2.fighterArray[2] = new Fighter();
     team2.fighterArray[2].fighterName = "Tetsuya Yamoto";
 
-        for (Fighter theFighter : team1.fighterArray) {
-            System.out.println(theFighter.fighterName);
-        }
+    Sport muayThai = new Sport();
+    muayThai.homeClub = team1;
+    muayThai.awayClub = team2;
 
-        for (Fighter theFighter : team2.fighterArray) {
-            System.out.println(theFighter.fighterName);
-        }
+    Wins knockout1 = new Wins();
+    knockout1.theFighter = muayThai.homeClub.fighterArray[0];
+    knockout1.theSportClub = muayThai.homeClub;
+    knockout1.theRound = 1;
+    knockout1.theTime = "on 08.20.2017 in Bangkok, Thailand";
+
+    Wins[] theWinner = {knockout1};
+    muayThai.wins = theWinner;
+
+        System.out.println("The winner " + muayThai.wins[0].theTime + ", in the " + muayThai.wins[0].theRound + " Round is " + muayThai.wins[0].theFighter.fighterName + " from " + muayThai.wins[0].theSportClub.sportClubName + ".");
+        
+
+
 
     }
 }
